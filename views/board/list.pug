@@ -1,0 +1,23 @@
+extends ../layout/default.pug
+block content
+  .jumbotron
+    h1 게시글 리스트 보기
+      small (list)
+  .container
+    table.list-tb.table.table-bordered.table-hover.text-center
+      thead.bg-dark.text-light
+        tr
+          th 번호
+          th 제목
+          th 작성자
+          th 작성일
+          th 조회수
+        tbody
+          each list in lists
+            tr(style='cursor:pointer;')
+              td= list.id
+              td.board-link.text-left(data-id=`${list.id}`)= list.title
+              td= list.writer
+              td= list.created
+              td= list.readnum
+    include ../inc/pager.pug

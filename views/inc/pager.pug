@@ -1,0 +1,29 @@
+.pager-wrap.d-flex.justify-content-center
+  .bt-first
+    //- - if() {
+    if pager.first
+      a.fa.fa-angle-double-left(href=`/board/list/${pager.first}`)
+    else
+      a.fa.fa-angle-double-left.disabled
+  .bt-prev
+    if pager.prev
+      a.fa.fa-angle-left(href=`/bord/list/${pager.prev}`)
+    else
+      a.fa.fa-angle-left.disabled
+  - for(var i=pager.grpStart; i<=pager.grpEnd; ++i)
+    if i == pager.page
+      .bt-page.active
+        a(href=`/board/list/${i}`)= i
+    else
+      .bt-page
+        a(href=`/board/list/${i}`)= i
+  .bt-next 
+    if pager.next
+      a.fa.fa-angle-right(href=`/board/list/${pager.next}`)
+    else
+      a.fa.fa-angle-right.disabled
+  .bt-last
+    if pager.last
+      a.fa.fa-angle-double-right(href=`/board/list/${pager.last}`)
+    else
+      a.fa.fa-angle-double-right.disabled

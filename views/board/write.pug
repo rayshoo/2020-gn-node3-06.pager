@@ -1,0 +1,24 @@
+extends ../layout/default.pug
+block content
+  .jumborton
+    h1 게시글 작성
+      small (list)
+    //- .container(style="border : 1px solid red;")
+    .container
+      form(action="/board/save" name="wrForm" method="post" onsubmit="return onSubmit(this);")
+        ul.wr-lists
+          li.wr-list.d-flex
+            .title.p-3.bg-dark.text-light 제목
+            .content.p-1
+              input.form-control(type="text" name="title" placeholder="제목을 작성해 주세요.")
+          li.wr-list.d-flex
+            .title.p-3.bg-dark.text-light 작성자
+            .content.p-1
+              input.form-control(type="text" name="writer" placeholder="작성자를 작성해 주세요.")
+          li.wr-list.d-flex
+            .title.p-3.bg-dark.text-light 내용
+            .content.p-1
+              textarea.form-control(name="comment" placeholder="내용을 작성해 주세요.")
+          li.text-center.p-5
+            button.btn.btn-primary 저장
+            button(type="reset").btn.btn-danger 다시작성
