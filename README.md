@@ -11,3 +11,8 @@
 
 # Typescript - playground - Example - HelloWorld
 ## naver d2 typescript(https://d2.naver.com/helloworld/2108442)
+
+## lodash, underscore
+## npm rest~
+## passport.js
+## firebase - login auth
